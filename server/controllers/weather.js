@@ -1,10 +1,9 @@
-const rp = require('request-promise');
 const _isEmpty = require('lodash.isempty');
 const moment = require('moment');
 
-const { getCityById } = require('./util');
-const { appCache } = require('./cache');
-const usCities = require('./config/us-cities.json');
+const { getCityById, makeAPICall } = require('../util');
+const { appCache } = require('../cache');
+const usCities = require('../config/us-cities.json');
 
 /**
  * Driving time
@@ -107,8 +106,7 @@ async function getWeatherByCity(req, res) {
 
   const { coord: { lat, lon } } = city;
   const appId = process.env.OPEN_WEATHER_API_KEY;
-  const resData = await rp.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${appId}`, { json: true, rejectUnauthorized: false });
-  // console.log(JSON.stringify(resData, null, 2));
+  const resData = await makeAPICall(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${appId}`);
   // Error Handling
   if (_isEmpty(resData)) {
     return res.status(500).json({ success:false, message: 'Unable to fetch the details. Please try again later.' }); 
@@ -150,26 +148,8 @@ function getCities(req, res) {
   res.json(cities);
 }
 
-/**
- * Sample api to test the api health
- * @param  {[type]} req  Request object from the api
- * @param  {[type]} res  Respoonse object to set data/error
- */
-function sampleApi(req, res) {
-  res.json({ success: true, message: 'Hello from server' });
-}
-
-/* Private functions */
-
-async function makeAPICall(apiUrl, apiKeyType) {
-  return await rp.get(apiUrl, { json: true, rejectUnauthorized: false });
-}
-
-
-
 module.exports = {
   getWeatherByCity,
   getCities,
-  getDrivingTime,
-  sampleApi
+  getDrivingTime
 };
