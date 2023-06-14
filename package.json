@@ -1,0 +1,47 @@
+{
+  "name": "dpe-ai-gh-copilot",
+  "version": "1.0.0",
+  "description": "An DPE AI experiment to evaluate GitHub Copilot.",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "test": "echo test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muthuskumar7/dpe-ai-gh-copilot.git"
+  },
+  "keywords": [
+    "ai",
+    "copilot",
+    "github",
+    "copilot"
+  ],
+  "author": "Muthukumar Sudalaiyandi",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "lodash.isempty": "^4.4.0",
+    "moment": "^2.29.4",
+    "node-cache": "^5.1.2",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "lodash.omit": "^4.5.0",
+    "nodemon": "^2.0.22"
+  },
+  "nodemonConfig": {
+    "verbose": true,
+    "watch": [
+      "./server"
+    ],
+    "ext": "js,json"
+  },
+  "bugs": {
+    "url": "https://github.com/muthuskumar7/dpe-ai-gh-copilot/issues"
+  },
+  "homepage": "https://github.com/muthuskumar7/dpe-ai-gh-copilot#readme"
+}
