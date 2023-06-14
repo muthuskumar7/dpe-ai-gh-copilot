@@ -1,12 +1,12 @@
+// Load env variables (api keys)
+require('dotenv').config();
+
 const express = require("express");
 
 const { getWeatherByCity, getCities, sampleApi, getDrivingTime } = require('./controller');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
-
-// Load env variables (api keys)
-require('dotenv').config();
 
 // Routes
 app.get('/api', sampleApi);
