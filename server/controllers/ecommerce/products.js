@@ -10,7 +10,6 @@ const { PRODUCTS_COLLECTION_ID } = require('../../util/constants');
 async function getProducts(req, res) {
   try {
     const products = await dbUtil.fetchAllData(PRODUCTS_COLLECTION_ID);
-    pagination logic
     const { page, limit } = req.query;
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
