@@ -271,6 +271,241 @@ An DPE AI experiment to evaluate GitHub Copilot. Includes 4 epic applications
 }
 ```
 </details>
+
+<details>
+<summary>Error 500</summary>
+  
+  ```json
+  {
+    "success": false,
+    "message": "Unable to process your request. Please try again later."
+  }
+  ```
+</details>
+
+#### **GET** `/api/ecommerce/customers/<customer_id>`
+**Description:** Retrieves the customer details for the given customer id.
+
+**Request:** `http://localhost:3001/api/ecommerce/customers/1`
+
+**Response:**
+<details>
+<summary>Success</summary>
+
+```json
+{
+    "success": true,
+    "data": {
+      "id": "1",
+      "name": "Cathleen Stephenson",
+      "email": "cathleenstephenson@concility.com",
+      "phone": "+1 (977) 541-2540",
+      "address": {
+          "line1": "272 Orient Avenue",
+          "line2": "Apt 19",
+          "city": "Grahamtown",
+          "state": "Michigan",
+          "zipcode": 21148
+      }
+  }
+}
+```
+</details>
+
+<details>
+<summary>Error 404</summary>
+  
+  ```json
+  {
+    "success": false,
+    "message": "Customer not found"
+  }
+  ```
+</details>
+
+<details>
+<summary>Error 500</summary>
+  
+  ```json
+  {
+    "success": false,
+    "message": "Unable to process your request. Please try again later."
+  }
+  ```
+</details>
+
+#### **POST** `/api/ecommerce/customers`
+**Description:** Creates a new customer.
+
+**Request:** `http://localhost:3001/api/ecommerce/customers`
+
+```json
+{
+  "name": "Benjamin Pruitt",
+  "email": "benjaminpruitt@concility.com",
+  "phone": "+1 (973) 527-3267",
+  "address": {
+      "line1": "546 Atkins Avenue",
+      "line2": "Apt 12",
+      "city": "Blue",
+      "state": "Florida",
+      "zipcode": 33626
+  }
+}
+```
+
+**Response:**
+<details>
+<summary>Success</summary>
+
+```json
+{
+  "success": true,
+  "data": {
+    "id": "2",
+    "name": "Benjamin Pruitt",
+    "email": "benjaminpruitt@concility.com",
+    "phone": "+1 (973) 527-3267",
+    "address": {
+        "line1": "546 Atkins Avenue",
+        "line2": "Apt 12",
+        "city": "Blue",
+        "state": "Florida",
+        "zipcode": 33626
+    }
+  }
+}
+```
+</details>
+
+<details>
+<summary>Error 400</summary>
+  
+  ```json
+  {
+    "success": false,
+    "message": "Invalid request"
+  }
+  ```
+</details>
+
+<details>
+<summary>Error 500</summary>
+  
+  ```json
+  {
+    "success": false,
+    "message": "Unable to process your request. Please try again later."
+  }
+  ```
+</details>
+
+#### **PUT** `/api/ecommerce/customers/<customer_id>`
+
+**Description:** Updates the customer details for the given customer id.
+
+**Request:** `http://localhost:3001/api/ecommerce/customers/1`
+
+```json
+{
+  "name": "Cathleen Stephenson",
+  "email": "cathleenstephenson@concility.com",
+  "phone": "+1 (977) 541-2540",
+  "address": {
+      "line1": "272 Orient Avenue",
+      "line2": "Apt 19",
+      "city": "Grahamtown",
+      "state": "Michigan",
+      "zipcode": 21148
+  }
+}
+```
+
+**Response:**
+<details>
+<summary>Success</summary>
+
+```json
+{
+  "success": true,
+  "data": {
+    "id": "1",
+    "name": "Cathleen Stephenson",
+    "email": "cathleenstephenson@concility.com",
+    "phone": "+1 (977) 541-2540",
+    "address": {
+        "line1": "272 Orient Avenue",
+        "line2": "Apt 19",
+        "city": "Grahamtown",
+        "state": "Michigan",
+        "zipcode": 21148
+    }
+  }
+}
+```
+</details>
+
+<details>
+<summary>Error 400</summary>
+  
+  ```json
+  {
+    "success": false,
+    "message": "Invalid request"
+  }
+  ```
+</details>
+
+<details>
+<summary>Error 404</summary>
+  
+  ```json
+  {
+    "success": false,
+    "message": "Customer not found"
+  }
+  ```
+</details>
+
+<details>
+<summary>Error 500</summary>
+  
+  ```json
+  {
+    "success": false,
+    "message": "Unable to process your request. Please try again later."
+  }
+  ```
+</details>
+
+#### **DELETE** `/api/ecommerce/customers/<customer_id>`
+**Description:** Deletes the customer details for the given customer id.
+
+**Request:** `http://localhost:3001/api/ecommerce/customers/1`
+
+**Response:**
+<details>
+<summary>Success</summary>
+
+```json
+{
+  "success": true,
+  "message": "Customer deleted successfully"
+}
+```
+</details>
+
+<details>
+<summary>Error 404</summary>
+  
+  ```json
+  {
+    "success": false,
+    "message": "Customer not found"
+  }
+  ```
+</details>
+
 <details>
 <summary>Error 500</summary>
   
