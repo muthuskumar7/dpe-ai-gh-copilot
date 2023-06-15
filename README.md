@@ -189,7 +189,8 @@ An DPE AI experiment to evaluate GitHub Copilot. Includes 4 epic applications
 **Request:** `http://localhost:3001/api/ecommerce/customers?page=1&limit=5`
 
 **Response:**
-**_Success_**
+<details>
+<summary>Success</summary>
 ```json
 {
     "success": true,
@@ -268,6 +269,7 @@ An DPE AI experiment to evaluate GitHub Copilot. Includes 4 epic applications
     }
 }
 ```
+</details>
 
 **_Error 500_**
 ```json
