@@ -186,7 +186,7 @@ An DPE AI experiment to evaluate GitHub Copilot. Includes 4 epic applications
 
 **Description:** Retrieves the list of customers with pagination. Default `page=1`, `limit=10`.
 
-**Request:** `http://localhost:3001/api/drivingTime?origin=5392171&destination=5341145`
+**Request:** `http://localhost:3001/api/ecommerce/customers?page=1&limit=5`
 
 **Response:**
 **_Success_**
@@ -196,7 +196,7 @@ An DPE AI experiment to evaluate GitHub Copilot. Includes 4 epic applications
     "data": {
         "next": {
             "page": 2,
-            "limit": 10
+            "limit": 5
         },
         "results": [
             {
@@ -262,71 +262,6 @@ An DPE AI experiment to evaluate GitHub Copilot. Includes 4 epic applications
                     "city": "Sunnyside",
                     "state": "Utah",
                     "zipcode": 41152
-                }
-            },
-            {
-                "id": "6",
-                "name": "Mcgowan Cooke",
-                "email": "mcgowancooke@concility.com",
-                "phone": "+1 (958) 444-2277",
-                "address": {
-                    "line1": "341 Overbaugh Place",
-                    "line2": "Apt 35",
-                    "city": "Reinerton",
-                    "state": "Palau",
-                    "zipcode": 43995
-                }
-            },
-            {
-                "id": "7",
-                "name": "Kinney Riddle",
-                "email": "kinneyriddle@concility.com",
-                "phone": "+1 (959) 432-2073",
-                "address": {
-                    "line1": "511 Quincy Street",
-                    "line2": "Apt 3",
-                    "city": "Kapowsin",
-                    "state": "Indiana",
-                    "zipcode": 72005
-                }
-            },
-            {
-                "id": "8",
-                "name": "Garrett Hayden",
-                "email": "garretthayden@concility.com",
-                "phone": "+1 (851) 524-2769",
-                "address": {
-                    "line1": "973 Anthony Street",
-                    "line2": "Apt 36",
-                    "city": "Castleton",
-                    "state": "Arkansas",
-                    "zipcode": 94727
-                }
-            },
-            {
-                "id": "9",
-                "name": "Staci Pugh",
-                "email": "stacipugh@concility.com",
-                "phone": "+1 (867) 406-3210",
-                "address": {
-                    "line1": "384 Lamont Court",
-                    "line2": "Apt 21",
-                    "city": "Duryea",
-                    "state": "Delaware",
-                    "zipcode": 27604
-                }
-            },
-            {
-                "id": "10",
-                "name": "Kirk Wilkerson",
-                "email": "kirkwilkerson@concility.com",
-                "phone": "+1 (863) 538-2586",
-                "address": {
-                    "line1": "499 Hunterfly Place",
-                    "line2": "Apt 33",
-                    "city": "Montura",
-                    "state": "Kentucky",
-                    "zipcode": 21935
                 }
             }
         ]
