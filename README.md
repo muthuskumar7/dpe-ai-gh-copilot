@@ -609,6 +609,7 @@ An DPE AI experiment to evaluate GitHub Copilot. Includes 4 epic applications
     "message": "Unable to process your request. Please try again later."
   }
   ```
+</details>
 
 #### **POST** `/api/ecommerce/products`
 **Description:** Creates a new product.
