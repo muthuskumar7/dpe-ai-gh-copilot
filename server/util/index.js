@@ -1,4 +1,4 @@
-const cities = require('./config/us-cities.json');
+const cities = require('../config/us-cities.json');
 const rp = require('request-promise');
 
 /**

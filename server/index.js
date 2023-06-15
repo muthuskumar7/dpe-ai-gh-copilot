@@ -30,11 +30,20 @@ app.get('/api/drivingTime', getDrivingTime);
 /**
  *  Ecommerce application API's
  */
+// Customers api's
 app.get('/api/ecommerce/customers', ecommerce.getCustomers);
 app.get('/api/ecommerce/customers/:id', ecommerce.getCustomerById);
 app.post('/api/ecommerce/customers', ecommerce.addCustomer);
 app.put('/api/ecommerce/customers/:id', ecommerce.updateCustomer);
 app.delete('/api/ecommerce/customers/:id', ecommerce.deleteCustomer);
+// Products api's
+app.get('/api/ecommerce/products', ecommerce.getProducts);
+app.get('/api/ecommerce/products/:id', ecommerce.getProductById);
+app.post('/api/ecommerce/products', ecommerce.addProduct);
+// app.put('/api/ecommerce/products/:id', ecommerce.updateProduct);
+// app.delete('/api/ecommerce/products/:id', ecommerce.deleteProduct);
+// Purchase api's
+app.post('/api/ecommerce/purchases', ecommerce.addPurchase);
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
