@@ -53,45 +53,45 @@ async function addProduct(req, res) {
   }
 }
 
-/**
- * @api {put} /api/ecommerce/products/:id Update product
- */
-async function updateProduct(req, res) {
-  try {
-    const product = { id: req.params.id, ...req.body };
-    const success = await dbUtil.updateData(PRODUCTS_COLLECTION_ID, product);
-    if (success) {
-      res.json({ success: true, message: `Product updated successfully`, data: product });
-    } else {
-      res.status(404).json({ success: false, message: `Product with id ${req.params.id} not found` });
-    }
-  } catch (e) {
-    console.error(`Error updating product: ${e.message}`);
-    res.status(500).json({ success: false, message: `Unable to process your request. Please try again later` });
-  }
-}
+// /**
+//  * @api {put} /api/ecommerce/products/:id Update product
+//  */
+// async function updateProduct(req, res) {
+//   try {
+//     const product = { id: req.params.id, ...req.body };
+//     const success = await dbUtil.updateData(PRODUCTS_COLLECTION_ID, product);
+//     if (success) {
+//       res.json({ success: true, message: `Product updated successfully`, data: product });
+//     } else {
+//       res.status(404).json({ success: false, message: `Product with id ${req.params.id} not found` });
+//     }
+//   } catch (e) {
+//     console.error(`Error updating product: ${e.message}`);
+//     res.status(500).json({ success: false, message: `Unable to process your request. Please try again later` });
+//   }
+// }
 
-/**
- * @api {delete} /api/ecommerce/products/:id Delete product
- */
-async function deleteProduct(req, res) {
-  try {
-    const success = await dbUtil.deleteData(PRODUCTS_COLLECTION_ID, req.params.id);
-    if (success) {
-      res.json({ success: true, message: `Product deleted successfully` });
-    } else {
-      res.status(404).json({ success: false, message: `Product with id ${req.params.id} not found` });
-    }
-  } catch (e) {
-    console.error(`Error deleting product: ${e.message}`);
-    res.status(500).json({ success: false, message: `Unable to process your request. Please try again later` });
-  }
-}
+// /**
+//  * @api {delete} /api/ecommerce/products/:id Delete product
+//  */
+// async function deleteProduct(req, res) {
+//   try {
+//     const success = await dbUtil.deleteData(PRODUCTS_COLLECTION_ID, req.params.id);
+//     if (success) {
+//       res.json({ success: true, message: `Product deleted successfully` });
+//     } else {
+//       res.status(404).json({ success: false, message: `Product with id ${req.params.id} not found` });
+//     }
+//   } catch (e) {
+//     console.error(`Error deleting product: ${e.message}`);
+//     res.status(500).json({ success: false, message: `Unable to process your request. Please try again later` });
+//   }
+// }
 
 module.exports = {
   getProducts,
   getProductById,
   addProduct,
-  updateProduct,
-  deleteProduct
+  // updateProduct,
+  // deleteProduct
 };
