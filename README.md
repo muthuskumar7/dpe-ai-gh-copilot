@@ -517,6 +517,232 @@ An DPE AI experiment to evaluate GitHub Copilot. Includes 4 epic applications
   ```
 </details>
 
+#### **GET** `/api/ecommerce/products`
+**Description:** Fetches all the products.
+
+**Request:** `http://localhost:3001/api/ecommerce/products`
+
+**Response:**
+<details>
+<summary>Success</summary>
+
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "id": "1",
+      "name": "PUMP",
+      "picture": "http://placehold.it/32x32",
+      "color": "Gray",
+      "size": "8",
+      "company": "Nike",
+      "price": "20",
+      "description": "Nostrud aute aliqua amet incididunt elit irure."
+    },
+    {
+      "id": "2",
+      "name": "Armor",
+      "picture": "http://placehold.it/32x32",
+      "color": "Green",
+      "size": "6",
+      "company": "Reebok",
+      "price": "20",
+      "description": "Incididunt non dolor in commodo."
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary>Error 500</summary>
+  
+  ```json
+  {
+    "success": false,
+    "message": "Unable to process your request. Please try again later."
+  }
+  ```
+</details>
+
+#### **GET** `/api/ecommerce/products/<product_id>`
+**Description:** Fetches the product details for the given product id.
+
+**Request:** `http://localhost:3001/api/ecommerce/products/1`
+
+**Response:**
+<details>
+<summary>Success</summary>
+
+```json
+{
+  "id": "1",
+  "name": "PUMP",
+  "picture": "http://placehold.it/32x32",
+  "color": "Gray",
+  "size": "8",
+  "company": "Nike",
+  "price": "20",
+  "description": "Nostrud aute aliqua amet incididunt elit irure."
+}
+```
+</details>
+
+<details>
+<summary>Error 404</summary>
+  
+  ```json
+  {
+    "success": false,
+    "message": "Product not found"
+  }
+  ```
+</details>
+
+<details>
+<summary>Error 500</summary>
+  
+  ```json
+  {
+    "success": false,
+    "message": "Unable to process your request. Please try again later."
+  }
+  ```
+
+#### **POST** `/api/ecommerce/products`
+**Description:** Creates a new product.
+
+**Request:** `http://localhost:3001/api/ecommerce/products`
+
+```json
+{
+  "name": "PUMP",
+  "picture": "http://placehold.it/32x32",
+  "color": "Gray",
+  "size": "8",
+  "company": "Nike",
+  "price": "20",
+  "description": "Nostrud aute aliqua amet incididunt elit irure."
+}
+```
+
+**Response:**
+<details>
+<summary>Success</summary>
+
+```json
+{
+  "success": true,
+  "data": {
+    "id": "1",
+    "name": "PUMP",
+    "picture": "http://placehold.it/32x32",
+    "color": "Gray",
+    "size": "8",
+    "company": "Nike",
+    "price": "20",
+    "description": "Nostrud aute aliqua amet incididunt elit irure."
+  }
+}
+```
+</details>
+
+<details>
+<summary>Error 400</summary>
+  
+  ```json
+  {
+    "success": false,
+    "message": "Invalid request"
+  }
+  ```
+</details>
+
+<details>
+<summary>Error 500</summary>
+  
+  ```json
+  {
+    "success": false,
+    "message": "Unable to process your request. Please try again later."
+  }
+  ```
+</details>
+
+#### **POST** `/api/ecommerce/purchases`
+**Description:** Creates a new purchase.
+
+**Request:** `http://localhost:3001/api/ecommerce/purchases`
+
+```json
+{
+  "id": "1",
+  "customerId": "1",
+  "products": [
+    {
+      "id": 1,
+      "name": "PUMP",
+      "price": "20"
+    }
+  ],
+  "subTotal": "20",
+  "tax": "2",
+  "shipping": "5",
+  "total": "27",
+  "date": "2019-01-01T00:00:00.000Z"
+}
+```
+
+**Response:**
+<details>
+<summary>Success</summary>
+
+```json
+{
+  "success": true,
+  "data": {
+    "id": "1",
+    "customerId": "1",
+    "products": [
+      {
+        "id": 1,
+        "name": "PUMP",
+        "price": "20"
+      }
+    ],
+    "subTotal": "20",
+    "tax": "2",
+    "shipping": "5",
+    "total": "27",
+    "date": "2019-01-01T00:00:00.000Z"
+  }
+}
+```
+</details>
+
+<details>
+<summary>Error 400</summary>
+  
+  ```json
+  {
+    "success": false,
+    "message": "Invalid request"
+  }
+  ```
+</details>
+
+<details>
+<summary>Error 500</summary>
+  
+  ```json
+  {
+    "success": false,
+    "message": "Unable to process your request. Please try again later."
+  }
+  ```
+</details>
+
 ## Running tests
 * Tests for the backend api's and their implementations are captured using `Jest` framework
 * Run `npm test` to execute and view the results.
