@@ -10,7 +10,25 @@ const { PRODUCTS_COLLECTION_ID } = require('../../util/constants');
 async function getProducts(req, res) {
   try {
     const products = await dbUtil.fetchAllData(PRODUCTS_COLLECTION_ID);
-    res.json({ success: true, data: products });
+    pagination logic
+    const { page, limit } = req.query;
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
+    const results = {};
+    if (endIndex < products.length) {
+      results.next = {
+        page: page + 1,
+        limit: limit
+      }
+    }
+    if (startIndex > 0) {
+      results.previous = {
+        page: page - 1,
+        limit: limit
+      }
+    }
+    results.results = products.slice(startIndex, endIndex);
+    res.json({ success: true, data: results });
   } catch (e) {
     console.error(`Error fetching products: ${e.message}`);
     res.status(500).json({ success: false, message: `Unable to process your request. Please try again later` });

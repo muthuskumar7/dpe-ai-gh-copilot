@@ -517,40 +517,47 @@ An DPE AI experiment to evaluate GitHub Copilot. Includes 4 epic applications
   ```
 </details>
 
-#### **GET** `/api/ecommerce/products`
+#### **GET** `/api/ecommerce/products?page=<page number>&limit=<items per page>`
 **Description:** Fetches all the products.
 
-**Request:** `http://localhost:3001/api/ecommerce/products`
+**Request:** `http://localhost:3001/api/ecommerce/products?page=1&limit=2`
 
 **Response:**
+
 <details>
 <summary>Success</summary>
 
 ```json
 {
   "success": true,
-  "data": [
-    {
-      "id": "1",
-      "name": "PUMP",
-      "picture": "http://placehold.it/32x32",
-      "color": "Gray",
-      "size": "8",
-      "company": "Nike",
-      "price": "20",
-      "description": "Nostrud aute aliqua amet incididunt elit irure."
+  "data": {
+    "next": {
+      "page": 2,
+      "limit": 2
     },
-    {
-      "id": "2",
-      "name": "Armor",
-      "picture": "http://placehold.it/32x32",
-      "color": "Green",
-      "size": "6",
-      "company": "Reebok",
-      "price": "20",
-      "description": "Incididunt non dolor in commodo."
-    }
-  ]
+    "results": [
+      {
+        "id": "1",
+        "name": "PUMP",
+        "picture": "http://placehold.it/32x32",
+        "color": "Gray",
+        "size": "8",
+        "company": "Nike",
+        "price": "20",
+        "description": "Nostrud aute aliqua amet incididunt elit irure."
+      },
+      {
+        "id": "2",
+        "name": "PUMP",
+        "picture": "http://placehold.it/32x32",
+        "color": "Gray",
+        "size": "8",
+        "company": "Nike",
+        "price": "20",
+        "description": "Nostrud aute aliqua amet incididunt elit irure."
+      }
+    ]
+  }
 }
 ```
 </details>
