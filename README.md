@@ -184,13 +184,12 @@ An DPE AI experiment to evaluate GitHub Copilot. Includes 4 epic applications
 
 #### **GET** `/api/ecommerce/customers?page=<page_number>&limit=<items per page>`
 
-Description: Retrieves the list of customers with pagination. Default `page=1`, `limit=10`.
+**Description:** Retrieves the list of customers with pagination. Default `page=1`, `limit=10`.
 
-Request: `http://localhost:3001/api/drivingTime?origin=5392171&destination=5341145`
+**Request:** `http://localhost:3001/api/drivingTime?origin=5392171&destination=5341145`
 
-Response: 
-
-_Success_
+**Response:**
+**_Success_**
 ```json
 {
     "success": true,
