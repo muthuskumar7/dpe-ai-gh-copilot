@@ -271,14 +271,15 @@ An DPE AI experiment to evaluate GitHub Copilot. Includes 4 epic applications
 }
 ```
 </details>
-
-**_Error 500_**
+<details>
+<summary>Error 500</summary>
 ```json
 {
   "success": false,
   "message": "Unable to process your request. Please try again later."
 }
 ```
+</details>
 
 ## Running tests
 * Tests for the backend api's and their implementations are captured using `Jest` framework
